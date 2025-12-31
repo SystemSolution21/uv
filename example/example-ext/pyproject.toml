@@ -1,0 +1,25 @@
+[project]
+name = "example-ext"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "SystemSolution21", email = "systemsolution21@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+example-ext = "example_ext:main"
+
+[tool.maturin]
+module-name = "example_ext._core"
+python-packages = ["example_ext"]
+python-source = "src"
+
+[tool.uv]
+cache-keys = [{ file = "pyproject.toml" }, { file = "src/**/*.rs" }, { file = "Cargo.toml" }, { file = "Cargo.lock" }]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
