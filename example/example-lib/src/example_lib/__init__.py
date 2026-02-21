@@ -1,2 +1,3 @@
-def hello() -> str:
-    return "Hello from example-lib!"
+from .main import hello
+
+__all__: list[str] = ["hello"]
